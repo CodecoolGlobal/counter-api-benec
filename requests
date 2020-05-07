@@ -1,3 +1,7 @@
 # Get the actual counter value
 
 GET http://localhost:5000/counter
+
+# increment the value of the counter
+
+POST http://localhost:5000/counter/increment

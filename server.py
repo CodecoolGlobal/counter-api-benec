@@ -13,6 +13,15 @@ def get_counter():
     return jsonify({'value': counter})
 
 
+@app.route('/counter/increment', methods=['POST'])
+def increment_counter():
+    '''Increment the counter by one.'''
+    global counter
+    counter += 1
+
+    return jsonify({'success': True})
+
+
 def main():
 
     app.run(port=5000)
