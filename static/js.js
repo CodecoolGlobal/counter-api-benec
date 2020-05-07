@@ -1,5 +1,21 @@
-function initPage(counterPromise) {
-    counterPromise.then(result => console.log(result.value))
+async function initPage(counterPromise) {
+    // counterPromise.then(result => console.log(result.value))
+    try {
+        const result = await counterPromise;
+        setCounterValue(result.value);
+        setEventHandlers();
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function setEventHandlers() {
+    // TODO
+}
+
+function setCounterValue(value) {
+    const counterElement = document.getElementById('counter-value');
+    counterElement.innerText = value;
 }
 
 function dummyResponse() {
@@ -8,7 +24,7 @@ function dummyResponse() {
 
 function main() {
     const counterPromise = fetch('/counter');
-    counterPromise.then(response => initPage(response.json));
+    counterPromise.then(response => initPage(response.json()));
 }
 
 main()
