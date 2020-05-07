@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from flask import Flask
+from flask import Flask, render_template
 from flask.json import jsonify
 
 app = Flask(__name__)
@@ -22,9 +22,14 @@ def increment_counter():
     return jsonify({'success': True})
 
 
+@app.route('/')
+def display_counter():
+    return render_template('index.html')
+
+
 def main():
 
-    app.run(port=5000)
+    app.run(port=8000)
 
 
 if __name__ == '__main__':
