@@ -1,3 +1,10 @@
 #+OPTIONS: toc:nil num:nil ^:nil
 #+TITLE: Building web APIs and using them from JS
 #+AUTHOR: Bence Fábián <begnoc@gmail.com>
+
+
+* Our API
+
+  - GET /counter :: returns the actual value of the counter
+  - POST /counter/increment :: increment the counter
+  - POST /counter/decrement :: decrement the counter
