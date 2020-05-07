@@ -1,0 +1,3 @@
+#+OPTIONS: toc:nil num:nil ^:nil
+#+TITLE: Building web APIs and using them from JS
+#+AUTHOR: Bence Fábián <begnoc@gmail.com>
